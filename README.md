@@ -6,15 +6,15 @@ Torzo/Test server for Walley SMS droid application
 Instant Use:
 ------------
 
-1) git clone <i>git@github.com:k0fis/kfsSmssTest.git</i>
-
-2) cd kfsSmssTest
-
-3) mvn jetty:run
-
+<pre>
+ git clone git@github.com:k0fis/kfsSmssTest.git
+ cd kfsSmssTest
+ mvn jetty:run
+</pre>
 For specific jetty port:
-3) mvn jetty:run -Djetty.port=9000
-
+<pre>
+ mvn jetty:run -Djetty.port=9000
+</pre>
 Servlet run in ROOT context in this case, so enter server: http://your_servername:9000
 
 User name and password are stored in src/maiin/realm.properties
