@@ -7,7 +7,7 @@ Instant Use:
 ------------
 
 <pre>
- git clone git@github.com:k0fis/kfsSmssTest.git
+ git clone https://github.com/k0fis/kfsSmssTest.git
  cd kfsSmssTest
  mvn jetty:run
 </pre>
