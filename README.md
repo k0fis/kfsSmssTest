@@ -19,10 +19,13 @@ Servlet run in ROOT context in this case, so enter server: http://your_servernam
 
 User name and password are stored in <i>src/main/realm.properties</i>
 Default user is <b>novak</b> and password is <b>novak</b> 
-there is possible to add new user, ie:
+there is possible to add new user - add new line, ie:
 <pre>
 walley=kreslo,kfsSmss
 </pre>
+For more information about add/configure users see <a href="http://wiki.eclipse.org/Jetty/Tutorial/Realms"> http://wiki.eclipse.org/Jetty/Tutorial/Realms</a> - HashLoginService
+
+
 Every incoming event is just logged into jetty log. Request for send SMS is filled every thirds.
 
 This behavior can be changed in <i>src/main/java/kfs/kfsSmss/sms.java</i>
@@ -31,7 +34,7 @@ This behavior can be changed in <i>src/main/java/kfs/kfsSmss/sms.java</i>
 Standard use:
 -------------
 
-Change method "<b>doOutgoing(String user)</b>" in <i>src/main/java/kfs/kfsSmss/sms.java</i> or delete sending 
+Change method "<b>doOutgoing(String user)</b>" in <i>src/main/java/kfs/kfsSmss/sms.java</i> or in minimal case delete sending 
 (test) SMS.
 
 In You server define one or more user with group kfsSmss. 
