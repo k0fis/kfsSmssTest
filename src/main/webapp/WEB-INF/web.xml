@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <description>kfs Real Bot SMS server</description>
+    <display-name>kfs Real Bot SMS server</display-name>
+    
+    <servlet>
+        <servlet-name>sms</servlet-name>
+        <servlet-class>kfs.kfsSmss.sms</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>log</servlet-name>
+        <servlet-class>kfs.kfsSmss.log</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>sms</servlet-name>
+        <url-pattern>/sms/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>log</servlet-name>
+        <url-pattern>/log/*</url-pattern>
+    </servlet-mapping>
+    
+    <welcome-file-list>
+        <welcome-file>sms</welcome-file>
+    </welcome-file-list> 
+    
+    <session-config>
+        <session-timeout>10</session-timeout>
+    </session-config>
+    
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Wildcard means whole app requires authentication</web-resource-name>
+            <url-pattern>/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>kfsSmss</role-name>
+        </auth-constraint>
+
+        <user-data-constraint>
+            <!-- transport-guarantee can be CONFIDENTIAL, INTEGRAL, or NONE -->
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>kfsRealm</realm-name>
+    </login-config>
+    <security-role>
+        <description>   
+            The role that is required to log in SMSS
+        </description>
+        <role-name>kfsSmss</role-name>
+    </security-role>
+        
+</web-app>
