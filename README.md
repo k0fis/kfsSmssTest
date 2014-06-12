@@ -17,7 +17,7 @@ For specific jetty port:
 </pre>
 Servlet run in ROOT context in this case, so enter server: http://your_servername:9000
 
-User name and password are stored in <i>src/maiin/realm.properties</i>
+User name and password are stored in <i>src/main/realm.properties</i>
 Default user is <b>novak</b> and password is <b>novak</b> 
 there is possible to add new user, ie:
 <pre>
